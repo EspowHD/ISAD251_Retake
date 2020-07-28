@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="093062e2-ec88-42b8-ba19-dad280516cb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Classes/DBContext.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +78,7 @@
       <updated>1595419657396</updated>
       <workItem from="1595419659213" duration="1868000" />
       <workItem from="1595899010803" duration="1833000" />
+      <workItem from="1595903808792" duration="1355000" />
     </task>
     <servers />
   </component>
@@ -104,9 +106,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1260" y="166" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1595900190476" />
-    <state x="1178" y="446" key="NewPhpFileDialog" timestamp="1595899169785">
+    <state x="1094" y="246" key="NewPhpClassDialog" timestamp="1595911020369">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1178" y="446" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595899169785" />
+    <state x="1094" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595911020369" />
+    <state x="1178" y="446" key="NewPhpFileDialog" timestamp="1595911031046">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1178" y="446" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595911031046" />
   </component>
 </project>
