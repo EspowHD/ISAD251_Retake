@@ -82,37 +82,55 @@ IF @Parent1Set = 0
 UPDATE [dbo].[Child]  SET ParentID2 = ISNULL(ParentID2,@ParentIDIn) WHERE ChildID = @ChildIDIn;
 GO
 
-CREATE PROCEDURE get_Parent_Appointment_Calender_Info
+CREATE PROCEDURE get_Parent_Appointment_Info
 @ParentIDIn INT
 AS
-SELECT AppointmentTitle as Title, AppointmentTime as 'Time',AppointmentID as ID
+SELECT AppointmentTitle as Title,
+AppointmentTime as 'Time',
+AppointmentID as ID,
+AppointmentLocation as 'Location',
+Notes as 'Notes'
 FROM Appointments
 WHERE @ParentIDIn = Appointments.ParentID
 Order by AppointmentTime
 GO
 
-CREATE PROCEDURE get_Parents_Child_Calender_Info
+CREATE PROCEDURE get_Parents_Child_Info
 @ParentIDIn INT
 AS
-SELECT DeadlineTitle as Title, DeadlineTime as 'Time',DeadlineID as ID
+SELECT DeadlineTitle as Title,
+ CONCAT(Child.CFirstName,' ',Child.CLastName) as 'Child',
+ DeadlineTime as 'Time',
+ DeadlineDescription as 'Description',
+ DeadlineCompleted as 'Completed',
+ DeadlineID as ID
 FROM Deadlines,Child
 WHERE (@ParentIDIn = Child.ParentID1 OR @ParentIDIn = Child.ParentID2) AND Child.ChildID = Deadlines.ChildID
 Order by DeadlineTime
 GO
 
-CREATE PROCEDURE get_Childs_Deadline_Calender_Info
+CREATE PROCEDURE get_Childs_Deadline_Info
 @ChildIDIn INT
 AS
-SELECT DeadlineTitle as Title, DeadlineTime as 'Time',DeadlineID as ID
+SELECT DeadlineTitle as Title,
+ CONCAT(Child.CFirstName,' ',Child.CLastName) as 'Child',
+ DeadlineTime as 'Time',
+ DeadlineDescription as 'Description',
+ DeadlineCompleted as 'Completed',
+ DeadlineID as ID
 FROM Deadlines
 WHERE @ChildIDIn = Deadlines.ChildID
 Order by DeadlineTime
 GO
 
-CREATE PROCEDURE get_Childs_Parent_Calender_Info
+CREATE PROCEDURE get_Childs_Parent_Info
 @ChildIDIn INT
 AS
-SELECT AppointmentTitle as Title, AppointmentTime as 'Time',AppointmentID as ID
+SELECT AppointmentTitle as Title,
+AppointmentTime as 'Time',
+AppointmentID as ID,
+AppointmentLocation as 'Location',
+Notes as 'Notes'
 FROM Appointments,Child
 WHERE (Appointments.ParentID = Child.ParentID1 OR Appointments.ParentID = Child.ParentID2) AND Child.ChildID = @ChildIDIn
 Order by AppointmentTime
