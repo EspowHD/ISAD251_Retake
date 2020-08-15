@@ -108,4 +108,31 @@ class DBContext
         }
         return $output;
     }
+
+    public function insertNewAppointment($ParentID,$Time,$Location,$Notes,$Title){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE  [dbo].[insert_Appointment] 
+                @ParentIDIn = ?
+                ,@AppointmentTimeIn = ?
+                ,@AppointmentLocationIn = ?
+                ,@NotesIn = ?
+                ,@AppointmentTitleIn = ?",
+            array($ParentID,$Time,$Location,$Notes,$Title));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+    public function insertNewDeadline($ChildID,$Title,$Time,$Description,$Completed){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[insert_Deadline] 
+               @ChildIDIn = ?
+              ,@DeadlineTitleIn = ?
+              ,@DeadlineTimeIn = ?
+              ,@DeadlineDescriptionIn = ?
+              ,@DeadlineCompletedIn = ?",
+            array($ChildID,$Title,$Time,$Description,$Completed));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
 }
