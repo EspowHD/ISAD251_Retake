@@ -14,10 +14,7 @@ class DBContext
         $connectionInfo = array( "Database"=>$this->dbname, "UID"=>$this->username, "PWD"=>$this->password);
         $this->connection = sqlsrv_connect( $this->servername, $connectionInfo);
 
-        if( $this->connection ) {
-            //echo "Connection established.<br />";
-        }else{
-            //echo "Connection could not be established.<br />";
+        if( !($this->connection) ) {
             die( print_r( sqlsrv_errors(), true));
         }
     }
@@ -65,7 +62,7 @@ class DBContext
         return $output;
     }
 
-    public function getChildsAppointmentInfo($ChildID)
+    public function getChildsAppointmentInfo($ChildID)//Done
     {
         $result=sqlsrv_query($this->connection,
             "EXECUTE [dbo].[get_Childs_Parent_Info] @ChildIDIn = ?",
@@ -87,7 +84,7 @@ class DBContext
         return $output;
     }
 
-    public function getChildsDeadlineInfo($ChildID)
+    public function getChildsDeadlineInfo($ChildID)//Done
     {
         $result=sqlsrv_query($this->connection,
             "EXECUTE [dbo].[get_Childs_Deadline_Info] @ChildIDIn = ?",
@@ -109,7 +106,8 @@ class DBContext
         return $output;
     }
 
-    public function insertNewAppointment($ParentID,$Time,$Location,$Notes,$Title){
+    public function insertNewAppointment($ParentID,$Time,$Location,$Notes,$Title)
+    {
         $stmt = sqlsrv_prepare($this->connection,
             "EXECUTE  [dbo].[insert_Appointment] 
                 @ParentIDIn = ?
@@ -131,6 +129,26 @@ class DBContext
               ,@DeadlineDescriptionIn = ?
               ,@DeadlineCompletedIn = ?",
             array($ChildID,$Title,$Time,$Description,$Completed));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+
+    public function deleteAppointment($AppointmentID){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[delete_Appointment] 
+               @AppointmentIDIn = ?",
+            array($AppointmentID));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+
+    public function deleteDeadline($DeadlineID){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[delete_Deadline] 
+               @DeadlineIDIn = ?",
+            array($DeadlineID));
         if( sqlsrv_execute( $stmt ) === false ) {
             die( print_r( sqlsrv_errors(), true));
         }

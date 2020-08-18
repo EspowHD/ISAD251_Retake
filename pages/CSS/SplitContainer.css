@@ -1,0 +1,4 @@
+
+                      * {margin: 0; padding: 0;}
+.SplitContainer {height: 100%; width:100%; font-size: 0;}
+.leftContainer, .rightContainer {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}

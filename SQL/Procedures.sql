@@ -135,3 +135,15 @@ FROM Appointments,Child
 WHERE (Appointments.ParentID = Child.ParentID1 OR Appointments.ParentID = Child.ParentID2) AND Child.ChildID = @ChildIDIn
 Order by AppointmentTime
 GO
+
+CREATE PROCEDURE delete_Deadline
+@DeadlineIDIn INT
+AS
+DELETE FROM Deadlines WHERE DeadlineID = @DeadlineIDIn
+GO
+
+CREATE PROCEDURE delete_Appointment
+@AppointmentIDIn INT
+AS
+DELETE FROM Appointments WHERE AppointmentID = @AppointmentIDIn
+GO

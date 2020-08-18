@@ -15,5 +15,5 @@ if( isset($_POST["NewDeadlineTitle"]) && isset($_POST["NewDeadlineTime"])) {
 
     $db->insertNewDeadline(ltrim($_SESSION["UserID"],'C'),$title,$time,$description,$completed);
 }
-//header("Location: ..\\calenderView.php");
-//return;
+header("Location: ..\\calenderView.php");
+return;
