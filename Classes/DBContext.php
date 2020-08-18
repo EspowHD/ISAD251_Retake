@@ -134,6 +134,33 @@ class DBContext
         }
     }
 
+    public function editAppointment($AppointmentID,$Time,$Location,$Notes,$Title){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[edit_Appointment] 
+               @AppointmentIDIn = ?
+              ,@AppointmentTitleIn = ?
+              ,@AppointmentTimeIn = ?
+              ,@AppointmentLocationIn = ?",
+            array($AppointmentID,$Time,$Location,$Notes,$Title));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+
+    public function editDeadline($DeadlineID,$Title,$Time,$Description,$Completed){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[edit_Deadline] 
+               @DeadlineIDIn = ?
+              ,@DeadlineTitleIn = ?
+              ,@DeadlineTimeIn = ?
+              ,@DeadlineDescriptionIn = ?
+              ,@DeadlineCompletedIn = ?",
+            array($DeadlineID,$Title,$Time,$Description,$Completed));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+
     public function deleteAppointment($AppointmentID){
         $stmt = sqlsrv_prepare($this->connection,
             "EXECUTE [dbo].[delete_Appointment] 

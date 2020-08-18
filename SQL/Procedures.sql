@@ -136,6 +136,36 @@ WHERE (Appointments.ParentID = Child.ParentID1 OR Appointments.ParentID = Child.
 Order by AppointmentTime
 GO
 
+CREATE PROCEDURE edit_Deadline
+@DeadlineIDIn INT,
+@DeadlineTitleIn VARCHAR(32),
+@DeadlineTimeIn DATETIME,
+@DeadlineDescriptionIn VARCHAR(140),
+@DeadlineCompletedIn BIT
+AS
+UPDATE Deadlines
+    SET DeadlineTitle = @DeadlineTitleIn
+           ,DeadlineTime = @DeadlineTimeIn
+           ,DeadlineDescription = @DeadlineDescriptionIn
+           ,DeadlineCompleted = @DeadlineCompletedIn
+    WHERE  DeadlineID = @DeadlineIDIn
+GO
+
+CREATE PROCEDURE edit_Appointment
+@AppointmentIDIn INT,
+@AppointmentTimeIn DATETIME,
+@AppointmentLocationIn VARCHAR(140),
+@NotesIn VARCHAR(140),
+@AppointmentTitleIn VARCHAR(32)
+AS
+UPDATE Appointments
+    SET AppointmentTitle = @AppointmentTitleIn
+           ,AppointmentTime = @AppointmentTimeIn
+           ,AppointmentLocation = @AppointmentLocationIn
+           ,Notes = @NotesIn
+    WHERE  AppointmentID = @AppointmentIDIn
+GO
+
 CREATE PROCEDURE delete_Deadline
 @DeadlineIDIn INT
 AS
