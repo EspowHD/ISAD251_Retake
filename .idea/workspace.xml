@@ -20,17 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="093062e2-ec88-42b8-ba19-dad280516cb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/CSS/RoundedButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewAppointment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewDeadline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/CSS/SelectMenus.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/CSS/SplitContainer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/DBContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/DBContext.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/CSS/FormPopup.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/CSS/FormPopup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/CalenderEndpoint/loadAppointments.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadAppointments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/CalenderEndpoint/loadDeadlines.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadDeadlines.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Page Parts/TopBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Page Parts/TopBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/Procedures.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/Procedures.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/CSS/RoundedButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/CSS/RoundedButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewDeadline.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewDeadline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadAppointments.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadAppointments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadDeadlines.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadDeadlines.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/calenderView.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/calenderView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +106,8 @@
       <workItem from="1596473234607" duration="75000" />
       <workItem from="1596473401336" duration="25999000" />
       <workItem from="1597311851322" duration="6497000" />
-      <workItem from="1597419331919" duration="17977000" />
+      <workItem from="1597419331919" duration="22866000" />
+      <workItem from="1597611131676" duration="16454000" />
     </task>
     <servers />
   </component>
@@ -146,10 +147,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1094" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595911020369" />
-    <state x="1178" y="446" key="NewPhpFileDialog" timestamp="1597522006388">
+    <state x="1178" y="446" key="NewPhpFileDialog" timestamp="1597752855383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1178" y="446" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597522006388" />
+    <state x="1178" y="446" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597752855383" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1596202680031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
