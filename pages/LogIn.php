@@ -34,7 +34,7 @@ if (isset($_SESSION["UserID"]))
     </script>
 </div>
 <div class="form-popup" id="signUpForm">
-    <form class="form-container" method="POST" action="">
+    <form class="form-container" method="POST" action="SchedulerEndpoint/createNewUser.php">
         <h1 class="title">Sign up</h1>
 
         <label for="SUFname"><b>First Name</b></label>
