@@ -7,7 +7,7 @@ if( isset($_POST["EdittedDeadlineTitle"]) && isset($_POST["EdittedDeadlineTime"]
     $id = $_POST["EdittedDeadlineID"];
     $title = $_POST["EdittedDeadlineTitle"];
     $time = str_replace("T"," ",$_POST["EdittedDeadlineTime"]);
-    $description = null;
+    $description = "";
     $completed = 0;
     if(isset($_POST["EdittedDeadlineDescription"]))$description = $_POST["EdittedDeadlineDescription"];
     if(isset($_POST["EdittedDeadlineCompleted"])){
@@ -16,5 +16,5 @@ if( isset($_POST["EdittedDeadlineTitle"]) && isset($_POST["EdittedDeadlineTime"]
 
     $db->editDeadline(ltrim($id,'D'),$title,$time,$description,$completed);
 }
-header("Location: ..\\calenderView.php");
+header("Location: ..\\AppointmentsAndDeadlines.php");
 return;

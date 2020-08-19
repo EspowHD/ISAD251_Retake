@@ -140,8 +140,9 @@ class DBContext
                @AppointmentIDIn = ?
               ,@AppointmentTitleIn = ?
               ,@AppointmentTimeIn = ?
-              ,@AppointmentLocationIn = ?",
-            array($AppointmentID,$Time,$Location,$Notes,$Title));
+              ,@AppointmentLocationIn = ?
+              ,@NotesIn = ?",
+            array($AppointmentID,$Title,$Time,$Location,$Notes));
         if( sqlsrv_execute( $stmt ) === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
@@ -179,5 +180,23 @@ class DBContext
         if( sqlsrv_execute( $stmt ) === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
+    }
+
+    public function getLoginData($ID){
+        if(strpos($ID, "P") !== false){
+            $stmt = sqlsrv_query($this->connection,
+                "EXECUTE [dbo].[get_Parent_Login] 
+               @ParentIDIn = ?",
+                array(ltrim($ID, 'P')));
+        } else{
+            $stmt = sqlsrv_query($this->connection,
+                "EXECUTE [dbo].[get_Child_Login] 
+               @ChildIDIn = ?",
+                array(ltrim($ID, 'C')));
+        }
+        if($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+        return sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
     }
 }

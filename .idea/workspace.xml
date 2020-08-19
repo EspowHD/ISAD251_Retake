@@ -20,12 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="093062e2-ec88-42b8-ba19-dad280516cb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/editAppointment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/editDeadline.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/LogIn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/loadLogin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/DBContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/DBContext.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL/Procedures.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/Procedures.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/calenderView.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/calenderView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Page Parts/TopBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Page Parts/TopBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewDeadline.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewDeadline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/editAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/editAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/SchedulerEndpoint/editDeadline.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/editDeadline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/calenderView.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/AppointmentsAndDeadlines.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,10 +152,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1094" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595911020369" />
-    <state x="1178" y="446" key="NewPhpFileDialog" timestamp="1597789826985">
+    <state x="1178" y="446" key="NewPhpFileDialog" timestamp="1597837746579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1178" y="446" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597789826985" />
+    <state x="1178" y="446" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597837746579" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1596202680031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -171,6 +176,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="723" y="202" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596013632549" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1597835648811">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597835648811" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597784274623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
