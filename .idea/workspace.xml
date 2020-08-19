@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="093062e2-ec88-42b8-ba19-dad280516cb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/addChild.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/SchedulerEndpoint/createNewUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/addToFamilyPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/DBContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/DBContext.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/Procedures.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/Procedures.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/LogIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/LogIn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Page Parts/TopBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Page Parts/TopBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/AppointmentsAndDeadlines.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/AppointmentsAndDeadlines.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +30,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../ISAD251_Retake\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">

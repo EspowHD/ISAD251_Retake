@@ -231,12 +231,16 @@
     //Controls Appointment Forms visibilities
     function openNewAppointmentForm(){
         document.getElementById("newAppointmentForm").style.display = "block"
-        document.getElementById("newApoointment").disabled = true;
+        document.getElementById("newAppointment").disabled = true;
+        document.getElementById("editAppointment").disabled = true;
+        document.getElementById("deleteAppointment").disabled = true;
         return false;
     }
     function closeNewAppointmentForm(){
         document.getElementById("newAppointmentForm").style.display = "none";
-        document.getElementById("newApoointment").disabled = false;
+        document.getElementById("newAppointment").disabled = false;
+        document.getElementById("editAppointment").disabled = false;
+        document.getElementById("deleteAppointment").disabled = false;
     }
     function openEditAppointmentForm(){
         var e = document.getElementById("selectedAppointment");
@@ -261,6 +265,10 @@
         return false;
     }
     function closeEditAppointmentForm(){
+        document.getElementById("editAppointmentForm").style.display = "none";
+        document.getElementById("newAppointment").disabled = false;
+        document.getElementById("editAppointment").disabled = false;
+        document.getElementById("deleteAppointment").disabled = false;
     }
 
     //Controls Deadline Forms visibilities
