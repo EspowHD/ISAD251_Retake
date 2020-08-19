@@ -65,7 +65,7 @@
             <label for="NAnotes"><b>Notes</b><label>
             <input id="NAnotes" type="text" placeholder="Enter Notes(Optional)" name="NewAppointmentNotes">
 
-            <input class="btn input" name="Submit" type="submit" value="Add Event">
+            <input class="btn input" name="Submit" type="submit" value="Add Appointment">
             <button type="button" class="btn cancel input" onclick="closeNewAppointmentForm()">Close</button>
             <script>
                 document.getElementById("NAtime").value = new Date().toISOString().substring(0, 16);
@@ -90,7 +90,7 @@
             <label for="EAnotes"><b>Notes</b><label>
             <input id="EAnotes" type="text" placeholder="Enter Notes(Optional)" name="EdittedAppointmentNotes">
 
-            <input class="btn input" name="Submit" type="submit" value="Add Event">
+            <input class="btn input" name="Submit" type="submit" value="Submit Changes">
             <button type="button" class="btn cancel input" onclick="closeEditAppointmentForm()">Close</button>
         </form>
     </div>
@@ -111,7 +111,7 @@
             <label for="NDcompleted" style="display: inline-block"><b>Completed?</b><input id="NDcompleted" style="display: inline-block" type="checkbox" name="NewDeadlineCompleted"></label>
 
 
-            <input class="btn input" name="Submit" type="submit" value="Add Event">
+            <input class="btn input" name="Submit" type="submit" value="Add Deadline">
             <button type="button" class="btn cancel input" onclick="closeNewDeadlineForm()">Close</button>
             <script>
                 document.getElementById("NDtime").value = new Date().toISOString().substring(0, 16);
