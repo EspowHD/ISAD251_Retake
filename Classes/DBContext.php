@@ -199,4 +199,52 @@ class DBContext
         }
         return sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
     }
+
+    public function insertParentToChild($ParentID,$ChildID){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[insert_Parent_To_Child] 
+               @ParentIDIn = ?,
+               @ChildIDIn = ?",
+                array($ParentID,$ChildID));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+    public function lastParentId() {
+        $stmt = sqlsrv_query($this->connection,"EXECUTE [dbo].[get_last_ParentID]");
+        if($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+        return sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+    }
+
+    public function lastChildId() {
+        $stmt = sqlsrv_query($this->connection,"EXECUTE [dbo].[get_last_ChildID]");
+        if($stmt === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+        return sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC);
+    }
+
+    public function insertNewParent($PFname,$PLname){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[insert_Parent] 
+                @FirstNameIn = ?,
+                @LastNameIn = ?",
+            array($PFname,$PLname));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
+
+    public function insertNewChild($CFname,$CLname){
+        $stmt = sqlsrv_prepare($this->connection,
+            "EXECUTE [dbo].[insert_Child] 
+                @FirstNameIn = ?,
+                @LastNameIn = ?",
+            array($CFname,$CLname));
+        if( sqlsrv_execute( $stmt ) === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+    }
 }

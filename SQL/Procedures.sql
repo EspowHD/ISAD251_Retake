@@ -8,7 +8,8 @@ INSERT INTO [dbo].[Parent]
            ,[PLastName])
      VALUES
            (@FirstNameIn
-           ,@LastNameIn)
+           ,@LastNameIn);
+SELECT SCOPE_IDENTITY() AS IDENTITY_COLUMN_NAME
 GO
 
 CREATE PROCEDURE insert_Child 
@@ -21,7 +22,8 @@ INSERT INTO [dbo].[Child]
            ,[CLastName])
      VALUES
            (@FirstNameIn
-           ,@LastNameIn)
+           ,@LastNameIn);
+SELECT SCOPE_IDENTITY() AS IDENTITY_COLUMN_NAME
 GO
 
 CREATE PROCEDURE insert_Appointment 
@@ -194,4 +196,14 @@ SELECT CFirstName AS FirstName,
 CLastName AS LastName
 FROM Child
 WHERE ChildID = @ChildIDIn
+GO
+
+CREATE PROCEDURE get_last_ChildID
+AS
+SELECT MAX(ChildID) AS LastID FROM Child
+GO
+
+CREATE PROCEDURE get_last_ParentID
+AS
+SELECT MAX(ParentID) AS LastID FROM Parent
 GO
