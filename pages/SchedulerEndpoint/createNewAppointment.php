@@ -12,5 +12,5 @@ if( isset($_POST["NewAppointmentTitle"]) && isset($_POST["NewAppointmentTime"]))
 
     $db->insertNewAppointment(ltrim($_SESSION["UserID"],'P'),$time,$location,$notes,$title);
 }
-header("Location: ..\\calenderView.php");
+header("Location: ..\\AppointmentsAndDeadlines.php");
 return;

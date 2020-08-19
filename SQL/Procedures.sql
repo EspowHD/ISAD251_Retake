@@ -177,3 +177,21 @@ CREATE PROCEDURE delete_Appointment
 AS
 DELETE FROM Appointments WHERE AppointmentID = @AppointmentIDIn
 GO
+
+CREATE PROCEDURE get_Parent_Login
+@ParentIDIn INT
+AS
+SELECT PFirstName AS FirstName,
+PLastName AS LastName
+FROM Parent
+WHERE ParentID = @ParentIDIn
+GO
+
+CREATE PROCEDURE get_Child_Login
+@ChildIDIn INT
+AS
+SELECT CFirstName AS FirstName,
+CLastName AS LastName
+FROM Child
+WHERE ChildID = @ChildIDIn
+GO

@@ -1,7 +1,10 @@
 <?php
     include_once "header.php";
-    $_SESSION["UserID"] = "C1";
-    $_SESSION["UserName"] = "test";
+    if (!isset($_SESSION["UserID"]))
+    {
+        header("Location: LogIn.php");
+        die();
+    }
 ?>
 <head>
     <title>View Appointments and Deadlines</title>
@@ -19,7 +22,7 @@
         <div id="appointmentsContainer" class = "leftContainer" style="width: 50%">
             <h2 style="text-align:center;">Appointments</h2>
             <form id="appointmentControls" class="form-inline" >
-                <button id="newApoointment" class="button" onclick="return openNewAppointmentForm()" role="button"
+                <button id="newAppointment" class="button" onclick="return openNewAppointmentForm()" role="button"
                     <?php if(strpos($_SESSION["UserID"], "C") !== false):?> data-toggle="tooltip" title="Only Parents can use this" disabled<?php endif; ?>>Add New Appointment</button>
                 <label style="font-size: 14px">Selected: </label>
                 <select name="Appointments" class="select-css" id="selectedAppointment">
@@ -70,7 +73,7 @@
         </form>
     </div>
 
-    <<div class="form-popup" id="editAppointmentForm">
+    <div class="form-popup" id="editAppointmentForm">
         <form class="form-container" method="POST" action="SchedulerEndpoint/editAppointment.php">
             <h1 class="title">Edit Appointment</h1>
             <input id="EAid" type="hidden" name="EdittedAppointmentID">
@@ -82,7 +85,7 @@
             <input id= "EAtime" type="datetime-local" name="EdittedAppointmentTime" required>
 
             <label for="EAlocation"><b>Location</b><label>
-            <input id="EAlocation" type="text" placeholder="Enter Location(Optional)" name="EdittedppointmentLocation">
+            <input id="EAlocation" type="text" placeholder="Enter Location(Optional)" name="EdittedAppointmentLocation">
 
             <label for="EAnotes"><b>Notes</b><label>
             <input id="EAnotes" type="text" placeholder="Enter Notes(Optional)" name="EdittedAppointmentNotes">
@@ -92,7 +95,7 @@
         </form>
     </div>
 
-    <<div class="form-popup" id="newDeadlineForm">
+    <div class="form-popup" id="newDeadlineForm">
         <form class="form-container" id="DeadlineFormContainer" method="post" action="SchedulerEndpoint/createNewDeadline.php">
             <h1 class="title">New Deadline</h1>
 
@@ -116,7 +119,7 @@
         </form>
     </div>
 
-    <<div class="form-popup" id="editDeadlineForm">
+    <div class="form-popup" id="editDeadlineForm">
         <form class="form-container" id="editDeadlineFormContainer" method="post" action="SchedulerEndpoint/editDeadline.php">
             <h1 class="title">Edit Deadline</h1>
             <input id="EDid" type="hidden" name="EdittedDeadlineID">
@@ -211,7 +214,7 @@
                 document.getElementById("selectedAppointment").appendChild(opt);
             }
             else{
-                if (data[i].hasOwnProperty('child')) $(leftContainer).append('<p style="color: black; font-size: 16px;"><b>Child: </b>' + data[i].child + '</p>');
+                if (data[i].hasOwnProperty('child')) $(event).append('<p style="color: black; font-size: 16px;"><b>Child: </b>' + data[i].child + '</p>');
                 var description = data[i].description;
                 if (description == "") description = "N/A";
                 $(event).append('<p style="color: black; font-size: 16px;"><b>Description: </b>' + description + '</p>');
@@ -240,15 +243,15 @@
         var id = e.options[e.selectedIndex].value;
         var elements = document.getElementById(id).querySelectorAll("h3,p")
         document.getElementById("EAid").value = id;
-        document.getElementById("EAtitle").value =  elements[0].textContent.split(" ID: D")[0];
+        document.getElementById("EAtitle").value =  elements[0].textContent.split(" ID: A")[0];
         var date = new Date(elements[1].textContent.slice(6));
         date.setHours(date.getHours()+1);
         document.getElementById("EAtime").value = date.toISOString().substring(0, 16);
         var location = "";
-        if(elements[2].textContent.slice(9) != "N/A") location = elements[2].textContent.slice(9);
+        if(elements[2].textContent.slice(10) != "N/A") location = elements[2].textContent.slice(10);
         document.getElementById("EAlocation").value = location;
         var notes = "";
-        if(elements[3].textContent.slice(6) != "N/A") notes = elements[3].textContent.slice(6);
+        if(elements[3].textContent.slice(7) != "N/A") notes = elements[3].textContent.slice(7);
         document.getElementById("EAnotes").value = notes;
 
         document.getElementById("editAppointmentForm").style.display = "block";
